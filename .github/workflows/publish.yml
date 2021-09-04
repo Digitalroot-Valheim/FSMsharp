@@ -33,16 +33,16 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
       - name: Restore packages
-        run: nuget restore src/${{ env.SLN_FILE_NAME }}
+        run: nuget restore ${{ github.workspace }}\src\${{ env.SLN_FILE_NAME }}
       - name: Build
-        run: dotnet build src/${{ env.SLN_FILE_NAME }} -c Release --no-restore --nologo
+        run: dotnet build ${{ github.workspace }}\src\${{ env.SLN_FILE_NAME }} -c Release --no-restore --nologo
       - name: Test
-        run: dotnet test src/${{ env.SLN_FILE_NAME }} -c Release --no-build --nologo
+        run: dotnet test ${{ github.workspace }}\src\${{ env.SLN_FILE_NAME }} -c Release --no-build --nologo
       - name: Create the package
-        run: dotnet pack src/${{ env.PROJ }}/${{ env.PROJ }}.csproj -c Release --no-restore --no-build --nologo
+        run: dotnet pack src/${{ env.PROJ }}\${{ env.PROJ }}.csproj -c Release --no-restore --no-build --nologo
       - name: List files in the repository
         run: |
-          ls ${{ github.workspace }}/src/FSMSharp/bin/Release/
+          ls ${{ github.workspace }}\src\FSMSharp\bin\Release
       - name: Publish package to Digitalroot-Valheim nuget repository
-        run: dotnet nuget push "${{ github.workspace }}/src/${{ env.PROJ }}/bin/Release/${{ env.PROJ }}.*.nupkg" --skip-duplicate -n
+        run: dotnet nuget push "${{ github.workspace }}\src\${{ env.PROJ }}\bin\Release\${{ env.PROJ }}.*.nupkg" --skip-duplicate
 
