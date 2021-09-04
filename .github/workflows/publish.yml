@@ -42,7 +42,7 @@ jobs:
         run: dotnet pack src/${{ env.PROJ }}/${{ env.PROJ }}.csproj -c Release --no-restore --no-build --nologo
       - name: List files in the repository
         run: |
-          ls src/${{ env.PROJ }}/bin/Release/
+          ls ${{ github.workspace }}src/FSMSharp/bin/Release/
       - name: Publish package to Digitalroot-Valheim nuget repository
-        run: dotnet nuget push src/${{ env.PROJ }}/bin/Release/*.nupkg --skip-duplicate --no-symbols true
+        run: dotnet nuget push "${{ github.workspace }}src/${{ env.PROJ }}/bin/Release/${{ env.PROJ }}.*.nupkg" --skip-duplicate -n
 
