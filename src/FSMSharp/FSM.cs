@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FSMSharp
@@ -62,7 +61,6 @@ namespace FSMSharp
     /// </summary>
     /// <param name="time">The time, expressed in seconds.</param>
     /// <exception cref="InvalidOperationException"></exception>
-    [UsedImplicitly]
     public void ProcessIncremental(float dtime)
     {
       _timeBaseForIncremental += dtime;
@@ -111,7 +109,7 @@ namespace FSMSharp
     /// </summary>
     public T CurrentState
     {
-      [UsedImplicitly] get => _currentState;
+      get => _currentState;
       set => InternalSetCurrentState(value, true);
     }
 
@@ -156,7 +154,6 @@ namespace FSMSharp
     /// Saves a snapshot of the FSM
     /// </summary>
     /// <returns>The snapshot.</returns>
-    [UsedImplicitly]
     public FSM_Snapshot<T> SaveSnapshot()
     {
       return new FSM_Snapshot<T>(_stateAge, _currentState);
@@ -167,14 +164,12 @@ namespace FSMSharp
     /// </summary>
     /// <param name="snap">The snapshot.</param>
     /// <param name="executeSideEffects"></param>
-    [UsedImplicitly]
     public void RestoreSnapshot(FSM_Snapshot<T> snap, bool executeSideEffects)
     {
       InternalSetCurrentState(snap.CurrentState, executeSideEffects);
       _stateAge = snap.StateAge;
     }
 
-    [UsedImplicitly]
     public FSM_StateBehaviour<T> GetBehaviour(T state)
     {
       return _stateBehaviours[state];

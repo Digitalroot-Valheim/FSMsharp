@@ -1,5 +1,4 @@
-﻿using JetBrains.Annotations;
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace FSMSharp
@@ -41,7 +40,6 @@ namespace FSMSharp
         /// <summary>
         /// Sets a callback which will be called when the FSM enters in this state
         /// </summary>
-        [UsedImplicitly]
         public FSM_StateBehaviour<T> OnEnter(Action callback)
         {
             _enterCallbacks.Add(callback);
@@ -51,7 +49,6 @@ namespace FSMSharp
         /// <summary>
         /// Sets a callback which will be called when the FSM leaves this state
         /// </summary>
-        [UsedImplicitly]
         public FSM_StateBehaviour<T> OnLeave(Action callback)
         {
             _leaveCallbacks.Add(callback);
@@ -61,7 +58,6 @@ namespace FSMSharp
         /// <summary>
         /// Sets a callback which will be called every time Process is called on the FSM, when this state is active
         /// </summary>
-        [UsedImplicitly]
         public FSM_StateBehaviour<T> Calls(Action<FSM_StateData<T>> callback)
         {
             _processCallbacks.Add(callback);
@@ -71,7 +67,6 @@ namespace FSMSharp
         /// <summary>
         /// Sets the state to automatically expire after the given time (in seconds)
         /// </summary>
-        [UsedImplicitly]
         public FSM_StateBehaviour<T> Expires(float duration)
         {
             Duration = duration;
@@ -92,7 +87,6 @@ namespace FSMSharp
         /// Sets a function which selects the state to which the FSM goes when the duration of this expires, or when Next() gets called on the FSM
         /// </summary>
         /// <param name="stateSelector">The state selector function.</param>
-        [UsedImplicitly]
         public FSM_StateBehaviour<T> GoesTo(Func<T> stateSelector)
         {
             NextStateSelector = stateSelector;
