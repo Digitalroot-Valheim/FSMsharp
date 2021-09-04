@@ -27,7 +27,7 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.0.2
       - name: Restore packages
-        run: nuget restore src/${{ env.SLN_FILE_NAME }} --nologo
+        run: nuget restore src/${{ env.SLN_FILE_NAME }}
       - name: Build
         run: dotnet build src/${{ env.SLN_FILE_NAME }} -c Release --no-restore --nologo
       - name: Test
