@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31624.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{037D230D-8D93-4B55-B5EA-4964449AD40C}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\README.md = ..\..\README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSMExamples", "FSMExamples\FSMExamples.csproj", "{B80CB8C9-153E-4AC7-8479-0F9D4FD00F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FSMSharp_Tests", "FSMSharp_Tests\FSMSharp_Tests.csproj", "{D031B6CD-8C7E-4176-A1B5-4F3B722254CA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FSMSharp", "FSMSharp\FSMSharp.csproj", "{CC3FF64A-9B58-486E-A5D9-70D8A0179B44}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{F32AB84C-BF77-48A9-B22B-5D80A7B201F9}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\.github\release-drafter.yml = ..\..\.github\release-drafter.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{D3AB042D-AB50-4483-9901-EFD6B5F5595E}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\.github\workflows\ci.yml = ..\..\.github\workflows\ci.yml
+		..\..\.github\workflows\drafter.yml = ..\..\.github\workflows\drafter.yml
+		..\..\.github\workflows\publish.yml = ..\..\.github\workflows\publish.yml
+		..\..\.github\workflows\test-report.yml = ..\..\.github\workflows\test-report.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B80CB8C9-153E-4AC7-8479-0F9D4FD00F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80CB8C9-153E-4AC7-8479-0F9D4FD00F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80CB8C9-153E-4AC7-8479-0F9D4FD00F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80CB8C9-153E-4AC7-8479-0F9D4FD00F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D031B6CD-8C7E-4176-A1B5-4F3B722254CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D031B6CD-8C7E-4176-A1B5-4F3B722254CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D031B6CD-8C7E-4176-A1B5-4F3B722254CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D031B6CD-8C7E-4176-A1B5-4F3B722254CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC3FF64A-9B58-486E-A5D9-70D8A0179B44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC3FF64A-9B58-486E-A5D9-70D8A0179B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC3FF64A-9B58-486E-A5D9-70D8A0179B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC3FF64A-9B58-486E-A5D9-70D8A0179B44}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F32AB84C-BF77-48A9-B22B-5D80A7B201F9} = {037D230D-8D93-4B55-B5EA-4964449AD40C}
+		{D3AB042D-AB50-4483-9901-EFD6B5F5595E} = {F32AB84C-BF77-48A9-B22B-5D80A7B201F9}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C247857-8793-4352-B588-4135A19E05C2}
+	EndGlobalSection
+EndGlobal
