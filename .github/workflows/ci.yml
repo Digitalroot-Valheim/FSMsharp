@@ -7,7 +7,7 @@ on:
   pull_request:
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       SLN_FILE_NAME: FSMSharp.sln
       NUGET_AUTH_TOKEN: ${{secrets.NUGET_PAT}}
@@ -20,8 +20,14 @@ jobs:
         uses: actions/setup-dotnet@v1.8.1
         with:
           source-url: https://nuget.pkg.github.com/Digitalroot-Valheim/index.json
+      - name: Setup NuGet.exe
+        uses: nuget/setup-nuget@v1
+        with:
+          nuget-version: latest
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.0.2
       - name: Restore packages
-        run: dotnet restore src/${{ env.SLN_FILE_NAME }} --nologo
+        run: nuget restore src/${{ env.SLN_FILE_NAME }} --nologo
       - name: Build
         run: dotnet build src/${{ env.SLN_FILE_NAME }} -c Release --no-restore --nologo
       - name: Test
