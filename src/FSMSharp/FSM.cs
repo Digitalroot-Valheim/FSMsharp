@@ -57,7 +57,12 @@ namespace FSMSharp
     public int Count => _stateBehaviours.Count;
 
     /// <summary>
-    /// Processes the logic for the FSM. 
+    /// Processes the logic for the FSM.
+    /// Time is Additive.
+    /// e.g. Calling these sequentially
+    /// ProcessIncremental(1) => Process(1); // Send 1
+    /// ProcessIncremental(1) => Process(2); // Send 2
+    /// ProcessIncremental(2) => Process(4); // Send 4
     /// </summary>
     /// <param name="time">The time, expressed in seconds.</param>
     /// <exception cref="InvalidOperationException"></exception>
@@ -68,7 +73,9 @@ namespace FSMSharp
     }
 
     /// <summary>
-    /// Processes the logic for the FSM. 
+    /// Processes the logic for the FSM.
+    /// The time duration counter on a state gets reset when the state changes.
+    /// In Unity pass Time.time
     /// </summary>
     /// <param name="time">The time, expressed in seconds.</param>
     /// <exception cref="InvalidOperationException"></exception>
